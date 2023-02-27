@@ -1,86 +1,92 @@
 ---
-title: "A3: SPL Library Checkouts"
+title: "SPL Library Checkouts - James Moy"
+author: "James Moy"
 output: html_document
 ---
 
+source("A3Chart1.R")
+source("A3Chart2.R")
+source("A3Chart3.R")
+source("summary.R")
+
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+In this report I look for trends regarding certain subjects, the medium they were checked out in, and specific trends over time of MaterialType, CheckoutYear, and Title over time measured in years specifically focusing on the novel:"The Therapist: A Novel (unabridged)" to determine which month contained the greatest amount of checkouts and how that changed over the course of several years. What I want to determine is whether or not certain titles have months of the year where they are much more popular and in what medium they are borrowed in. 
+
+1. Is there a relationship between Subjects of the books checked out and the MaterialType
+2. What is the month with the most checkouts for ebooks?
+3. What is the month with the least checkouts for ebooks?
+4. What is the year with the most checkouts for a book that you’re interested in?
+5. What is the year with the least checkouts for a book that you’re interested in?
+
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+The first question is analyzing whether or not there is a correlational relationship between the variables of "Subjects" and "MaterialType". I wanted to be able to understand if the relationship would be help us understand whether certain subjects were preferred over certain mediums such as ebook or as a physcial copy. My second and third questions were what the month with the most checkouts for ebooks were. I wanted to determine a maximum month where individual would be much more inclined to check out books and vise versa. I wanted to find the month where the highest demand for this dataset was. I also wanted to determine the year with the most and least checkouts for the book, The Therapist: A Novel (unabridged). I personally felt that the book was very interesting and I wanted to see when other people were most likely to check it out and rent it from the library. For these two datasets I chose to test for the variables of CheckoutYear, CheckoutMonth, Checkouts, filtered the dataset to find max and min values.
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
 
-- Who collected/published the data?  
+- Who collected/published the data? 
+
+The data was collected, owned, and published by the Seattle Public Library 
+
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+
+I created several Datasets. The first one was a measure of subjects, checkout count, and checkout type to determine if there was a relationship between the specific subjects of the books being checked out and the measure of count for those specific types of checkouts. 
+
 - How was the data collected or generated?  
+
+The data was both collected and generated through internal library systems that tracked checkout dates, titles, subjects, and technology mediums through which they were checked out.
+
 - Why was the data collected?  
+
+I believe the data was collected to create a dataset of specific logs for recording checkouts of titles, when they were checked out, the amount of times they were checked out, and the medium from which it was rented. This way the library system would have logs and a historical record of all the archives and activity using their resources. 
+
+
 - What, if any, ethical questions do you need to consider when working with this data?  
+
+One ethical question I should consider is how the dataset and the results from the affects of analyzing certain trends in the data may affect the authors of the specific titles and whether or not the records may have certain indications. We should definitley consult with the owners of the dataset and any authors that may be indirectly or directly affected. 
+
 - What are possible limitations or problems with this data?   (at least 200 words)
 
+The data provided by the Seattle Public Library Checkouts by Title dataset can provide valuable insights into library patron behavior and reading preferences however there are some limitations to consider: 
 
-### First Trends Over Time Chart
+- Limited Scope
+- Missing Data
+- Limited Demographic Information
+- Limited Context
+- Selection Bias
+- Changing Library Practices
+- Limited Context
+- Selection Bias 
+- Changing Library Practices
+- Non-representative Sample
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Limited scope: The data only covers the Seattle Public Library system and may not be representative of broader reading habits or trends in other parts of the country or the world. Therefore, it may be difficult to generalize findings from this dataset to other populations.
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+Missing data: There may be missing data or incomplete records, which can lead to inaccurate analyses or incomplete conclusions. This can happen if a patron opts out of sharing their data or if there are errors in recording data.
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
+Limited demographic information: The dataset does not provide demographic information about the patrons who checked out the materials, such as age, gender, race, or income level. Without this information, it may be difficult to determine if there are specific patterns in reading preferences among different groups of people.
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+Limited context: The dataset only provides information on the number of checkouts per title and does not provide any additional context or information about the books, such as reviews, ratings, or publication date, which can influence reading habits.
 
-Here's an example of how to run an R script inside an RMarkdown file:
+Selection bias: The data may be biased towards certain titles, such as popular bestsellers, which can skew the data and make it difficult to generalize findings.
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+Changing library practices: As library practices change over time, it may be difficult to compare data from different time periods or to draw conclusions about long-term trends in library patron behavior.
+
+Non-representative sample: The dataset only includes data on items that were checked out from the library, which may not be representative of all materials that patrons are interested in reading. Therefore, it may be difficult to determine if certain types of books or materials are more popular than others.
+
+#Include charts
+
+Chart 1
+``````{r, echo = FALSE, warning = FALSE, code = readLines("A3Chart1.R")}
 ```
 
-### Second Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+Chart 2
+``````{r, echo = FALSE, code = readLines("A3Chart2.R")}
 ```
 
-### Your Choice
-
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+Chart 3
+``````{r, echo = FALSE, code = readLines("A3Chart3.R")}
 ```
-
-
