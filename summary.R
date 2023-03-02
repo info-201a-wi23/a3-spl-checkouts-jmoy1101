@@ -14,7 +14,7 @@ all_items <- read.csv("/Users/jamesmoy/Desktop/INFO 201/A3/a3-spl-checkouts-jmoy
 # Group by CheckoutType and Subjects to determine whether there exists a relationship between the two over time
 
 Comparing_CheckoutTypeandSubjects <- all_items %>%
-  filter(all_items == 'CheckoutType') %>%
+  filter(CheckoutType == 'OverDrive') %>%
   group_by(Subjects)
 
 
