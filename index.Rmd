@@ -4,10 +4,7 @@ author: "James Moy"
 output: html_document
 ---
 
-source("A3Chart1.R")
-source("A3Chart2.R")
-source("A3Chart3.R")
-source("summary.R")
+
 
 ### Introduction
 
@@ -19,7 +16,9 @@ In this report I look for trends regarding certain subjects, the medium they wer
 4. What is the year with the most checkouts for a book that you’re interested in?
 5. What is the year with the least checkouts for a book that you’re interested in?
 
-
+```{r include=FALSE, paged.print=TRUE}
+source("summary.R")
+```
 ### Summary Information
 
 The first question is analyzing whether or not there is a correlational relationship between the variables of "Subjects" and "MaterialType". I wanted to be able to understand if the relationship would be help us understand whether certain subjects were preferred over certain mediums such as ebook or as a physcial copy. My second and third questions were what the month with the most checkouts for ebooks were. I wanted to determine a maximum month where individual would be much more inclined to check out books and vise versa. I wanted to find the month where the highest demand for this dataset was. I also wanted to determine the year with the most and least checkouts for the book, The Therapist: A Novel (unabridged). I personally felt that the book was very interesting and I wanted to see when other people were most likely to check it out and rent it from the library. For these two datasets I chose to test for the variables of CheckoutYear, CheckoutMonth, Checkouts, filtered the dataset to find max and min values.
@@ -80,13 +79,23 @@ Non-representative sample: The dataset only includes data on items that were che
 #Include charts
 
 Chart 1
-``````{r, echo = FALSE, warning = FALSE, code = readLines("A3Chart1.R")}
+
+#This chart depicts the relationship between MaterialType, CheckoutYear, and Title over time measured in years. I wanted to see if any specific title had a trend where it was checked out in a specific type and in a specific medium and the relationships between the three variables through time. The Y-Axis displays the material type and the x-axis shows checkout year. From this visual representation, we can see that the factors are pretty equally distributed. 
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+source("A3Chart1.R")
 ```
 
 Chart 2
-``````{r, echo = FALSE, code = readLines("A3Chart2.R")}
+The first chart shows the novel:"The Therapist: A Novel (unabridged)" measured against the factors of MaterialType and CheckoutYear.The second chart shows the novel:"The Therapist: A Novel (unabridged)" measured against the factors of MaterialType and CheckoutMonth. I wanted to see if this specific novel contained any trends in relation to the specific year or specific month. 
+
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+source("A3Chart2.R")
 ```
 
 Chart 3
-``````{r, echo = FALSE, code = readLines("A3Chart3.R")}
+
+This chart filters the data for a specific book titled "The Therapist: A Novel (unabridged)", and selects relevant variables including CheckoutType, CheckoutYear, and CheckoutMonth. The data is grouped by CheckoutType, CheckoutYear, and CheckoutMonth, and the number of checkouts is counted using the summarize() function.A line chart is created using ggplot() to visualize trends over time. The x-axis represents the month of checkout, while the y-axis represents the number of checkouts. The lines in the chart are colored by year, providing a breakdown of the number of checkouts by checkout type, year, and month. The purpose of this filter is to show how the number of checkouts for the book varies over time.
+
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+source("A3Chart3.R)
 ```
