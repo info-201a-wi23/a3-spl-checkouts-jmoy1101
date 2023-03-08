@@ -23,11 +23,7 @@ ggplot(comparing_checkouts, aes(x = CheckoutMonth, y = Checkouts, color = Checko
        x = "Checkout Month",
        y = "Number of Checkouts",
        color = "Checkout Year")
-<<<<<<< HEAD
-=======
-scale_y_continuous(breaks = seq(0, 21, 3)) +
-  scale_x_continuous(breaks = seq(0, 35, 5))
->>>>>>> 8b9248f875d5637c637113fda29cd9198280bda3
+
 
 
 #This chart filters the data for a specific book titled "The Therapist: A Novel (unabridged)", and selects relevant variables including CheckoutType, CheckoutYear, and CheckoutMonth. 
