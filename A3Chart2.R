@@ -3,7 +3,7 @@ library("tidyr")
 library("ggplot2")
 library("lubridate")
 library("scales")
-
+ 
 all_items <- read.csv("/Users/jamesmoy/Desktop/INFO 201/A3/a3-spl-checkouts-jmoy1101/2022-2023-All-Checkouts-SPL-Data.csv")
 
 Novel_CheckoutsOverTime <- all_items %>%

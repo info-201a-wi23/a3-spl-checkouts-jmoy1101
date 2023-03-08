@@ -12,7 +12,7 @@ library("lubridate")
 
 all_items <- read.csv("/Users/jamesmoy/Desktop/INFO 201/A3/a3-spl-checkouts-jmoy1101/2022-2023-All-Checkouts-SPL-Data.csv")
 # Group by CheckoutType and Subjects to determine whether there exists a relationship between the two over time
-
+ 
 
 Comparing_CheckoutTypeandSubjects <- all_items %>%
   group_by(Subjects, CheckoutType) %>%
